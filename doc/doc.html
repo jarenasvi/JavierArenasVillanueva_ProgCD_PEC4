@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentación PEC4 - Javier Arenas</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 40px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+
+        header p {
+            margin-top: 5px;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 30px 40px 30px;
+        }
+
+        h1 {
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 5px;
+            margin-top: 50px;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: #34495e;
+        }
+
+        h3 {
+            margin-top: 15px;
+            color: #555;
+        }
+
+        section {
+            background: white;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        code {
+            background: #eef1f5;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+            font-size: 0.95em;
+        }
+
+        ul {
+            margin-top: 8px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 30px 0;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Documentación PEC4</h1>
+    <p><strong>Javier Arenas Villanueva</strong></p>
+</header>
+
+<main>
+
+
+
+
+
+
+<h1>data_loader.py</h1>
+<section>
+<h2>load_dataset(file_path=None)</h2>
+<p><strong>Definición:</strong> Carga el fichero introducido como parámetro y si no se proporciona, pregunta al usuario qué dataset cargar.</p>
+
+<h3>Parámetros:</h3>
+<ul>
+    <li><code>file_path</code> (str, opcional): Ruta del archivo a cargar.</li>
+</ul>
+
+<h3>Devuelve:</h3>
+<ul>
+    <li><code>pd.DataFrame</code>: DataFrame con los datos cargados.</li>
+</ul>
+</section>
+
+
+
+
+
+
+<h1>eda.py</h1>
+<section>
+<h2>show_head(df)</h2>
+<p><strong>Definición:</strong> Muestra las 5 primeras filas del DataFrame.</p>
+<h3>Parámetros:</h3>
+<ul><li><code>df</code> (pd.DataFrame): DataFrame de los datos.</li></ul>
+<h3>Devuelve:</h3>
+<ul><li>Muestra por pantalla las 5 primeras filas.</li></ul>
+</section>
+
+<section>
+<h2>show_columns(df)</h2>
+<p><strong>Definición:</strong> Muestra las columnas del DataFrame.</p>
+<h3>Parámetros:</h3>
+<ul><li><code>df</code> (pd.DataFrame): DataFrame de los datos.</li></ul>
+<h3>Devuelve:</h3>
+<ul><li>Muestra por pantalla las columnas.</li></ul>
+</section>
+
+<section>
+<h2>show_info(df)</h2>
+<p><strong>Definición:</strong> Muestra la información general del DataFrame.</p>
+<h3>Parámetros:</h3>
+<ul><li><code>df</code> (pd.DataFrame): DataFrame de los datos.</li></ul>
+<h3>Devuelve:</h3>
+<ul><li>Muestra por pantalla la información del DataFrame.</li></ul>
+</section>
+
+
+
+
+
+
+<h1>cleaning.py</h1>
+<section>
+<h2>rename_columns(df, tipo)</h2>
+<p><strong>Definición:</strong> Renombra las columnas del dataset <code>taxa_abandonament.xlsx</code> para que coincidan con el dataset <code>rendiment_estudiants.xlsx</code>.</p>
+<h3>Parámetros:</h3>
+<ul>
+    <li><code>df</code> (pd.DataFrame): Dataset a renombrar.</li>
+    <li><code>tipo</code> (str): Debe ser <code>'abandono'</code>.</li>
+</ul>
+<h3>Devuelve:</h3>
+<ul>
+    <li>DataFrame <code>taxa_abandonament.xlsx</code> con columnas renombradas.</li>
+</ul>
+</section>
+
+<section>
+<h2>drop_columns(df, tipo)</h2>
+<p><strong>Definición:</strong> Elimina columnas innecesarias del dataset.</p>
+<h3>Parámetros:</h3>
+<ul>
+    <li><code>df</code> (pd.DataFrame): DataFrame del que se quieren eliminar columnas.</li>
+    <li><code>tipo</code> (str): <code>'rendiment'</code> o <code>'abandono'</code>.</li>
+</ul>
+<h3>Devuelve:</h3>
+<ul>
+    <li>DataFrame sin las columnas innecesarias.</li>
+</ul>
+</section>
+
+<section>
+<h2>group(df, tipo)</h2>
+<p><strong>Definición:</strong> Agrupa el dataset por <code>['Curs Acadèmic', 'Tipus universitat', 'Sigles', 'Tipus Estudi', 'Branca', 'Sexe', 'Integrat S/N']</code> y calcula la media de la métrica relevante.</p>
+<h3>Parámetros:</h3>
+<ul>
+    <li><code>df</code> (pd.DataFrame): DataFrame a agrupar.</li>
+    <li><code>tipo</code> (str):
+        <ul>
+            <li><code>'rendiment'</code>: calcula la media de <code>'Taxa rendiment'</code>.</li>
+            <li><code>'abandono'</code>: calcula la media de <code>'% Abandonament a primer curs'</code>.</li>
+        </ul>
+    </li>
+</ul>
+<h3>Devuelve:</h3>
+<ul>
+    <li>DataFrame agrupado.</li>
+</ul>
+</section>
+
+<section>
+<h2>merge_datasets(df_rendiment, df_abandono)</h2>
+<p><strong>Definición:</strong> Fusiona ambos datasets (rendimiento y abandono) manteniendo solo las filas coincidentes.</p>
+<h3>Parámetros:</h3>
+<ul>
+    <li><code>df_rendiment</code> (pd.DataFrame): Dataset de rendimiento.</li>
+    <li><code>df_abandono</code> (pd.DataFrame): Dataset de abandono.</li>
+</ul>
+<h3>Devuelve:</h3>
+<ul>
+    <li>DataFrame fusionado de ambos datasets.</li>
+</ul>
+</section>
+
+
+
+
+
+
+<h1>visualization.py</h1>
+<section>
+<h2>plot_temporal(df)</h2>
+<p><strong>Definición:</strong> Genera gráficos temporales del % de abandono y tasa de rendimiento por curso académico.</p>
+<h3>Parámetros:</h3>
+<ul><li><code>df</code> (pd.DataFrame): DataFrame fusionado.</li></ul>
+<h3>Devuelve:</h3>
+<ul><li>Guarda una imagen <code>.png</code> en la carpeta <code>img/</code>.</li></ul>
+</section>
+
+<h1>analysis.py</h1>
+<section>
+<h2>analyze_dataset(merged_df)</h2>
+<p><strong>Definición:</strong> Realiza un análisis estadístico completo y genera un informe en formato JSON.</p>
+<h3>Parámetros:</h3>
+<ul><li><code>merged_df</code> (pd.DataFrame): Dataset fusionado.</li></ul>
+<h3>Devuelve:</h3>
+<ul>
+    <li>Archivo JSON con metadata, estadísticas globales, análisis por rama y rankings.</li>
+</ul>
+</section>
+
+
+<h1>main.py</h1>
+<section>
+<h2>exercise_1()</h2>
+<p><strong>Definición:</strong> Ejecuta el ejercicio 1 mostrando un análisis exploratorio básico del dataset seleccionado.</p>
+
+<h3>Parámetros:</h3>
+<ul>
+    <li>No tiene parámetros.</li>
+</ul>
+
+<h3>Devuelve:</h3>
+<ul>
+    <li>Muestra por pantalla las primeras filas, columnas e información general del dataset cargado.</li>
+</ul>
+</section>
+
+<section>
+<h2>exercise_2()</h2>
+<p><strong>Definición:</strong> Ejecuta el ejercicio 2 cargando ambos datasets, limpiándolos, agrupándolos y fusionándolos en un único DataFrame.</p>
+
+<h3>Parámetros:</h3>
+<ul>
+    <li>No tiene parámetros.</li>
+</ul>
+
+<h3>Devuelve:</h3>
+<ul>
+    <li>DataFrame fusionado de rendimiento y abandono, mostrando además su información exploratoria por pantalla.</li>
+</ul>
+</section>
+
+<section>
+<h2>exercise_3(df_merged)</h2>
+<p><strong>Definición:</strong> Ejecuta el ejercicio 3 generando la visualización de series temporales de abandono y rendimiento.</p>
+
+<h3>Parámetros:</h3>
+<ul>
+    <li><code>df_merged</code> (pd.DataFrame): Dataset fusionado de rendimiento y abandono.</li>
+</ul>
+
+<h3>Devuelve:</h3>
+<ul>
+    <li>Genera y guarda una figura en formato <code>.png</code> en la carpeta <code>img/</code>.</li>
+</ul>
+</section>
+
+<section>
+<h2>exercise_4(df_merged)</h2>
+<p><strong>Definición:</strong> Ejecuta el ejercicio 4 realizando un análisis estadístico automatizado del dataset fusionado.</p>
+
+<h3>Parámetros:</h3>
+<ul>
+    <li><code>df_merged</code> (pd.DataFrame): Dataset fusionado de rendimiento y abandono.</li>
+</ul>
+
+<h3>Devuelve:</h3>
+<ul>
+    <li>Genera un archivo JSON con metadata, estadísticas globales, análisis por rama y rankings en la carpeta <code>report/</code>.</li>
+</ul>
+</section>
+
+<section>
+<h2>main()</h2>
+<p><strong>Definición:</strong> Función principal del proyecto que gestiona la ejecución de los ejercicios mediante argumentos de línea de comandos.</p>
+
+<h3>Parámetros:</h3>
+<ul>
+    <li>No recibe parámetros directamente. Utiliza <code>argparse</code> para gestionar los argumentos.</li>
+</ul>
+
+<h3>Devuelve:</h3>
+<ul>
+    <li>Ejecuta los ejercicios seleccionados o todos los ejercicios si no se indica ningún argumento.</li>
+</ul>
+</section>
+
+
+
+
+<footer>
+    Documentación generada para la PEC4 · Programación para la Ciencia de Datos · Javier Arenas Villanueva
+</footer>
+
+</main>
+</body>
+</html>
