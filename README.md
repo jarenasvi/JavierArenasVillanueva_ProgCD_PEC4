@@ -82,7 +82,7 @@ JavierArenasVillanueva_ProgCD_PEC4
 ## Instalación
 1. `Iniciar un terminal e indicar el cirectorio de la carpeta donde irá el proyecto.`
 2. `git clone https://github.com/jarenasvi/JavierArenasVillanueva_ProgCD_PEC4`
-3. `cd ./JavierArenasVillanueva_ProgCD_PEC4
+3. `cd ./JavierArenasVillanueva_ProgCD_PEC4`
 4. `pip install -r requirements.txt`
 5. `python -m pylint --rcfile=pep8.pylintrc src`
 6. `cd ./src`
