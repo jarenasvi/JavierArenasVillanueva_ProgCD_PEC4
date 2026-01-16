@@ -61,9 +61,9 @@ JavierArenasVillanueva_ProgCD_PEC4
      - **visualization.py**: módulo en el que se genera un archivo ``.png`` en la carpeta ``img/``, mostrando la Evolución del % de Abandono por curso académico y la Evolución de la Tasa de Rendimiento por curso académico.
      - **analysis.py**: módulo correspondiente al ejercicio 4, donde se realiza un análisis estadístico automatizado que se guarda en un archivo ``.json`` dentro de la carpeta ``report/``.
 #### doc/
-- Carpeta con la documentación de cada función.
+- Carpeta un archivo `.html` con la documentación de cada función.
 #### screenshots/
-- Carpeta con las capturas de pantalla de las evidencias.
+- Carpeta archivos `.png` con las capturas de pantalla de las evidencias.
 #### requirements.txt
 - Documento de texto con las librerias necesarias para el proyecto. 
 #### Enunciado_PEC4.pdf
