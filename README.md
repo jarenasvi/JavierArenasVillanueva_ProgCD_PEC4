@@ -41,11 +41,17 @@ JavierArenasVillanueva_ProgCD_PEC4
                                   │   └─ analysis.py
                                   │
                                   ├─ doc/
+                                  │
                                   ├─ screenshots/
+                                  │
                                   ├─ requirements.txt
+                                  │
                                   ├─ Enunciado_PEC4.pdf
+                                  │
                                   ├─ LICENSE.txt
+                                  │
                                   ├─ README.md
+                                  │
                                   └─ pep8.pylintrc
 ```
 ### Información detallada
